@@ -10,3 +10,22 @@ def menu():
 
 while True:
     menu()
+    option=input("\nSeleccione una opción del menú")
+
+    match option:
+        case "1":
+            print()
+        case "2":
+            print()
+        case "3":
+            print()
+        case "4":
+            print()
+        case "5":
+            print()
+        case "6":
+            print()
+        case "7":
+            print("Gracias por usar el programa.")
+            break
+
