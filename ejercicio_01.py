@@ -53,10 +53,36 @@ def perimetro():
     print(f"El perimetro del rectángulo es:{(2*a)+(2*b)} unidades")
 
 def primo():
-    num=int(input("Ingrese el numero que desea comprobar si es primo o no"))
+    num=int(input("Ingrese el numero que desea comprobar si es primo o no:"))
+    if num%2!=0 and num%3!=0:
+        print(f"{num} Es un numero primo")
+    else:
+        print(f"{num} No es un numero primo")
+
+def promedio_calificaciones(lista):
+    g=sum(lista)/len(lista)
+    print("\n--PROMEDIO--")
+    print(f"El promedio de las calificaciones ingresadas es:{g:.2f}")
+def mayores_85_60(lista):
+    contador=0
+    contador_dos=0
+    for numero in lista:
+        if numero>=85:
+            contador+=1
+        elif numero<60:
+            contador_dos+=1
+    print("\n--CONTADOR--")
+    print(f"Hay {contador} notas mayores o igual a 85")
+    print(f"Hay {contador_dos} en zona de riesgo")
+
+
+
+
+
 
 while True:
     lista=[]
+    lista_dos=[]
     menu()
     option=input("\nSeleccione una opción del menú: ")
 
@@ -74,10 +100,21 @@ while True:
         case "2":
             area()
             perimetro()
+
         case "3":
-            print()
+            primo()
+
         case "4":
-            print()
+            q = int(input("\nIngrese la cantidad de calificaciones que quiere agregar: "))
+            if q > 0:
+                for i in range(q):
+                    p=int(input("Ingrese la calificación que desea agregar:"))
+                lista_dos.append(p)
+
+                promedio_calificaciones(lista_dos)
+                mayores_85_60(lista_dos)
+            else:
+                print("Error valor invalido.")
         case "5":
             print()
         case "6":
