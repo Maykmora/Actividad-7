@@ -75,6 +75,12 @@ def mayores_85_60(lista):
     print(f"Hay {contador} notas mayores o igual a 85")
     print(f"Hay {contador_dos} en zona de riesgo")
 
+def agregar_a_lista():
+    q = int(input("\nIngrese la cantidad de numeros que quiere agregar : "))
+    for i in range(q):
+        p = int(input("Ingrese los numeros de los que desee: "))
+        lista.append(p)
+
 def agregar_a_lista_dos():
     q = int(input("\nIngrese la cantidad de calificaciones que quiere agregar: "))
     if q > 0:
@@ -83,12 +89,6 @@ def agregar_a_lista_dos():
         lista_dos.append(p)
     else:
         print("Error valor invalido.")
-
-def agregar_a_lista():
-    q = int(input("\nIngrese la cantidad de numeros que quiere agregar : "))
-    for i in range(q):
-        p = int(input("Ingrese los numeros de los que desee: "))
-        lista.append(p)
 
 def agregar_a_lista_tres():
     q = int(input("\nIngrese la cantidad de numeros que quiere agregar a la lista : "))
@@ -103,6 +103,20 @@ def num_mayor(lista):
 def num_menor(lista):
     menor=min(lista)
     print("El numero mayor en la lista es:", menor)
+
+def frecuencia(lista):
+    print("\n--FRECUENCIA--")
+    frecuencias = {}
+
+    for numero in lista:
+        if numero in frecuencias:
+            frecuencias[numero] += 1
+        else:
+            frecuencias[numero] = 1
+
+    for numero, cantidad in frecuencias.items():
+        print("El número ",numero,f" se repite {cantidad} vez/veces")
+
 
 
 while True:
@@ -132,7 +146,10 @@ while True:
             promedio_calificaciones(lista_dos)
             mayores_85_60(lista_dos)
         case "5":
-            num_mayor()
+            agregar_a_lista_tres()
+            num_mayor(lista_tres)
+            num_menor(lista_tres)
+            frecuencia(lista_tres)
         case "6":
             print()
         case "7":
