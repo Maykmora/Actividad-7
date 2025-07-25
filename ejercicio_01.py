@@ -54,11 +54,14 @@ def perimetro():
 
 def primo():
     num=int(input("Ingrese el numero que desea comprobar si es primo o no:"))
-    if num%2!=0 and num%3!=0:
-        print(f"{num} Es un numero primo")
-    else:
+    if num<=1:
         print(f"{num} No es un numero primo")
-
+    else:
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                print(f"{num} no es un número primo")
+                return
+        print(f"{num} es un número primo")
 def promedio_calificaciones(lista):
     g=sum(lista)/len(lista)
     print("\n--PROMEDIO--")
@@ -83,12 +86,9 @@ def agregar_a_lista():
 
 def agregar_a_lista_dos():
     q = int(input("\nIngrese la cantidad de calificaciones que quiere agregar: "))
-    if q > 0:
-        for i in range(q):
-            p = int(input("Ingrese la calificación que desea agregar:"))
+    for i in range(q):
+        p = int(input("Ingrese la calificación que desea agregar:"))
         lista_dos.append(p)
-    else:
-        print("Error valor invalido.")
 
 def agregar_a_lista_tres():
     q = int(input("\nIngrese la cantidad de numeros que quiere agregar a la lista : "))
@@ -102,7 +102,7 @@ def num_mayor(lista):
     print("El numero mayor en la lista es:", mayor)
 def num_menor(lista):
     menor=min(lista)
-    print("El numero mayor en la lista es:", menor)
+    print("El numero menor en la lista es:", menor)
 
 def frecuencia(lista):
     print("\n--FRECUENCIA--")
@@ -150,7 +150,7 @@ while True:
             primo()
 
         case "4":
-            agregar_a_lista()
+            agregar_a_lista_dos()
             promedio_calificaciones(lista_dos)
             mayores_85_60(lista_dos)
         case "5":
