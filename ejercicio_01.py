@@ -5,7 +5,7 @@ def menu():
     print("3.Verificar si un numero es primo o no")
     print("4.Calcular el promedio de n calificaciones")
     print("5.Calcular el numero mayor y el menor de n números ")
-    print("6.Calculadora")
+    print("6.Calculadora con operaciones básicas")
     print("7.Salir")
 
 def suma_total(lista):
@@ -117,6 +117,14 @@ def frecuencia(lista):
     for numero, cantidad in frecuencias.items():
         print("El número ",numero,f" se repite {cantidad} vez/veces")
 
+def calculadora():
+    print("\n--CALCULADORA--")
+    a=int(input("Ingrese el primer numero: "))
+    b=int(input("Ingrese el segundo numero: "))
+    print(f"El resultado de {a}+{b} es: {a+b}")
+    print(f"El resultado de {a}-{b} es: {a-b}")
+    print(f"El resultado de {a}X{b} es: {a*b}")
+    print(f"El resultado de {a}/{b} es: {a/b:.2f}")
 
 
 while True:
@@ -151,7 +159,7 @@ while True:
             num_menor(lista_tres)
             frecuencia(lista_tres)
         case "6":
-            print()
+            calculadora()
         case "7":
             print("Gracias por usar el programa.")
             break
