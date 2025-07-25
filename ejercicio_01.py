@@ -15,7 +15,7 @@ def suma_total(lista):
 def promedio(lista):
     prom=sum(lista)/len(lista)
     print("\n--PROMEDIO--")
-    print(f"El promedio de los números ingresados es:{prom:.2f}")
+    print(f"El promedio de los números ingresados es: {prom:.2f}")
 def numeros_positivos_ceros(lista):
     positivos = 0
     negativos = 0
@@ -75,23 +75,46 @@ def mayores_85_60(lista):
     print(f"Hay {contador} notas mayores o igual a 85")
     print(f"Hay {contador_dos} en zona de riesgo")
 
+def agregar_a_lista_dos():
+    q = int(input("\nIngrese la cantidad de calificaciones que quiere agregar: "))
+    if q > 0:
+        for i in range(q):
+            p = int(input("Ingrese la calificación que desea agregar:"))
+        lista_dos.append(p)
+    else:
+        print("Error valor invalido.")
 
+def agregar_a_lista():
+    q = int(input("\nIngrese la cantidad de numeros que quiere agregar : "))
+    for i in range(q):
+        p = int(input("Ingrese los numeros de los que desee: "))
+        lista.append(p)
 
+def agregar_a_lista_tres():
+    q = int(input("\nIngrese la cantidad de numeros que quiere agregar a la lista : "))
+    for i in range(q):
+        p = int(input("Ingrese los numeros de los que desee: "))
+        lista_tres.append(p)
 
+def num_mayor(lista):
+    mayor=max(lista)
+    print("\n--MAYOR Y MENOR--")
+    print("El numero mayor en la lista es:", mayor)
+def num_menor(lista):
+    menor=min(lista)
+    print("El numero mayor en la lista es:", menor)
 
 
 while True:
     lista=[]
     lista_dos=[]
+    lista_tres=[]
     menu()
     option=input("\nSeleccione una opción del menú: ")
 
     match option:
         case "1":
-            q = int(input("\nIngrese la cantidad de numeros que quiere agregar : "))
-            for i in range(q):
-                p = int(input("Ingrese los numeros de los que desee: "))
-                lista.append(p)
+            agregar_a_lista()
             suma_total(lista)
             promedio(lista)
             numeros_positivos_ceros(lista)
@@ -105,18 +128,11 @@ while True:
             primo()
 
         case "4":
-            q = int(input("\nIngrese la cantidad de calificaciones que quiere agregar: "))
-            if q > 0:
-                for i in range(q):
-                    p=int(input("Ingrese la calificación que desea agregar:"))
-                lista_dos.append(p)
-
-                promedio_calificaciones(lista_dos)
-                mayores_85_60(lista_dos)
-            else:
-                print("Error valor invalido.")
+            agregar_a_lista()
+            promedio_calificaciones(lista_dos)
+            mayores_85_60(lista_dos)
         case "5":
-            print()
+            num_mayor()
         case "6":
             print()
         case "7":
