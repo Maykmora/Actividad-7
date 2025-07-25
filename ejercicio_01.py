@@ -41,6 +41,20 @@ def multiplos_tres(lista):
             contador+=1
     print("En total hay", contador, "multiplos de 3.")
 
+def area():
+    b=int(input("Ingrese el tamaño de la base del rectángulo:"))
+    a=int(input("Ingrese la altura del rectángulo: "))
+    print("\n--ÁREA--")
+    print(f"El area del rectángulo es de: {a*b} unidades cuadradas")
+def perimetro():
+    b = int(input("Ingrese el tamaño de la base del rectángulo:"))
+    a = int(input("Ingrese la altura del rectángulo: "))
+    print("\n--PERIMETRO--")
+    print(f"El perimetro del rectángulo es:{(2*a)+(2*b)} unidades")
+
+def primo():
+    num=int(input("Ingrese el numero que desea comprobar si es primo o no"))
+
 while True:
     lista=[]
     menu()
@@ -58,7 +72,8 @@ while True:
             multiplos_tres(lista)
 
         case "2":
-            print()
+            area()
+            perimetro()
         case "3":
             print()
         case "4":
